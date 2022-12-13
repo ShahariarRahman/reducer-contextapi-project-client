@@ -1,18 +1,19 @@
-import { useEffect } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import './App.css';
 
+export const PRODUCT_CONTEXT = createContext();
+
 const App = () => {
-  useEffect(() => {
-    fetch('http://localhost:5000/product')
-      .then(res => res.json())
-      .then(data => console.log(data));
-  }, [])
+
+
   return (
-    <div className="App">
-      <h1 className="">
-        Hello world!
-      </h1>
-    </div>
+    <PRODUCT_CONTEXT.Provider  >
+      <div className="App">
+        <h1 className="">
+          aaa
+        </h1>
+      </div>
+    </PRODUCT_CONTEXT.Provider>
   );
 }
 
